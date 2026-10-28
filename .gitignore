@@ -31,3 +31,16 @@ build/
 
 ### VS Code ###
 .vscode/
+
+
+# Repositorio de config de agentes #
+ai-agents-core/
+
+# Squad de agentes
+.squad/
+.Agents/
+
+# Variaveis de ambiente e secrets
+.env
+.env.*
+!.env.example
