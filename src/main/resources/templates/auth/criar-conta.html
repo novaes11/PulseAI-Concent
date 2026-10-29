@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PulseAI Concent - Criar Conta</title>
+
+    <!-- Folha de estilos compartilhada padrão Concent Sistemas -->
+    <link rel="stylesheet" th:href="@{/css/auth.css}" href="../../static/css/auth.css">
+</head>
+
+<body>
+    <main class="login-card">
+        <header class="login-header">
+            <!-- Logotipo Oficial da Concent Sistemas -->
+            <div class="logo-container">
+                <img th:src="@{/images/logo-concent.png}" src="../../static/images/logo-concent.png"
+                    alt="Concent Sistemas - PulseAI Concent" class="brand-logo-img">
+            </div>
+            <h1 class="brand-title">Criar <span>Conta</span></h1>
+            <p class="brand-subtitle">Cadastre-se no portal de consentimento clínico</p>
+        </header>
+
+        <!-- Formulário de Criação de Conta -->
+        <form th:action="@{/criar-conta}" method="post" novalidate>
+            <div class="form-group">
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" name="nome" class="form-control"
+                    placeholder="Seu nome completo" required>
+            </div>
+
+            <div class="form-group">
+                <label for="username">E-mail Corporativo</label>
+                <input type="email" id="username" name="username" class="form-control"
+                    placeholder="usuario@concent.com.br" autocomplete="username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" class="form-control" placeholder="••••••••"
+                    autocomplete="new-password" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Registrar</button>
+
+            <!-- Link de retorno para login -->
+            <div class="signup-prompt">
+                Já possui acesso? <a th:href="@{/login}">Voltar ao login</a>
+            </div>
+        </form>
+
+        <footer class="login-footer">
+            <p>&copy; Concent Sistemas &bull; PulseAI Concent. Todos os direitos reservados.</p>
+        </footer>
+    </main>
+</body>
+
+</html>
