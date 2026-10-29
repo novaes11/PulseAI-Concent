@@ -225,3 +225,41 @@ body {
     border-top: 1px solid var(--concent-border);
     padding-top: 1.25rem;
 }
+
+.password-requirements {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 1.25rem 0;
+    font-size: 0.8rem;
+}
+
+.req-item {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: #64748b;
+    /* Cinza slate quando pendente */
+    margin-bottom: 0.35rem;
+    transition: color 0.2s ease, font-weight 0.2s ease;
+}
+
+/* Marcador padrão (círculo vazio) */
+.req-item::before {
+    content: "○";
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+/* Estado quando o requisito é atendido (VERDE) */
+.req-item.valid {
+    color: #166534;
+    /* Verde escuro acessível */
+    font-weight: 600;
+}
+
+.req-item.valid::before {
+    content: "✓";
+    color: #16a34a;
+    /* Verde vivo */
+    font-weight: bold;
+}

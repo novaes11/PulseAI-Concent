@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 
 <head>
@@ -26,8 +26,7 @@
         <form th:action="@{/criar-conta}" method="post" novalidate>
             <div class="form-group">
                 <label for="nome">Nome Completo</label>
-                <input type="text" id="nome" name="nome" class="form-control"
-                    placeholder="Seu nome completo" required>
+                <input type="text" id="nome" name="nome" class="form-control" placeholder="Seu nome completo" required>
             </div>
 
             <div class="form-group">
@@ -42,6 +41,19 @@
                     autocomplete="new-password" required>
             </div>
 
+            <div class="form-group">
+                <label for="confirmPassword">Confirmar Senha</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder="••••••••"
+                    autocomplete="new-password" required>
+            </div>
+
+            <ul class="password-requirements" id="passwordRequirements">
+                <li id="req-length" class="req-item">Mínimo de 8 caracteres</li>
+                <li id="req-upper" class="req-item">Pelo menos 1 letra maiúscula</li>
+                <li id="req-number" class="req-item">Pelo menos 1 número</li>
+                <li id="req-special" class="req-item">Pelo menos 1 caractere especial (@, #, $, etc.)</li>
+            </ul>
+
             <button type="submit" class="btn-submit">Registrar</button>
 
             <!-- Link de retorno para login -->
@@ -54,6 +66,9 @@
             <p>&copy; Concent Sistemas &bull; PulseAI Concent. Todos os direitos reservados.</p>
         </footer>
     </main>
+
+    <!-- Script de validação de senha em tempo real -->
+    <script th:src="@{/js/criarConta.js}" src="../../static/js/criarConta.js"></script>
 </body>
 
 </html>
